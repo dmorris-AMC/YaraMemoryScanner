@@ -15,7 +15,7 @@ function Test-Administrator {
 }
 <#
     This function handles the scanning of processes according to the yara rule specified.
-    1) Will Download Yara 4.0.5 from Github
+    1) Will Download Yara 4.2.3 from Github
     2) Expand the zip archive
     3) Gather all of the running processes and pipe the output to yara
     4) Yara will take the passed rule and scan each process against the rule 
@@ -28,7 +28,7 @@ function ScanProcesses{
     else {
     Clear-Host
     Write-Host "Downloading Yara"
-    Invoke-WebRequest -Uri "https://github.com/VirusTotal/yara/releases/download/v4.0.5/yara-v4.0.5-1554-win64.zip" -OutFile ".\yara64.zip"
+    Invoke-WebRequest -Uri "https://github.com/VirusTotal/yara/releases/download/v4.2.3/yara-4.2.3-2029-win64.zip" -OutFile ".\yara64.zip"
     Expand-Archive yara64.zip -Force
     Clear-Host
     Write-Host "Scanning Processes"
